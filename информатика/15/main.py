@@ -121,6 +121,22 @@ def task_7():
             print('7:', A)
             return None
 
+# Не работает
+def task_8():
+    for A in range(2**15, 0, -1):
+        is_dell = True
+        for x in range(-2 ** 7, 2 ** 7):
+            for y in range(-2 ** 7, 2 ** 7):
+                v = (x + 2 * y > A) or (x > 13) or (y < 44)
+                if not v:
+                    is_dell = False
+                    break
+
+        if is_dell:
+            print('8:', A)
+            return None
+
+
 task_1()
 task_2()
 task_3()
@@ -128,3 +144,4 @@ task_4()
 task_5()
 task_6()
 task_7()
+task_8()

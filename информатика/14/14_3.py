@@ -12,7 +12,7 @@ def task_72599():
                 res += int(v) * base ** (len(num) - i)
         return res
 
-    for x in range(38, 0, -1):
+    for x in range(36, 0, -1):
         num1 = convert('C59*BA98F', x, 37)
         num2 = convert('E3*5DA9C6', x, 37)
         if (num1 * num2) % 36 == 0:

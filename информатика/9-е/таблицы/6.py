@@ -1,9 +1,10 @@
 count = 0
 
-for s in open('3,4,5.csv'):
-    M = [int(x) for x in s.split(',')]
+for s in open("6.csv"):
+    M = [int(x) for x in s.split(",")]
 
     dicts = {}
+
     for x in M:
         if x in dicts:
             dicts[x] += 1
@@ -13,7 +14,7 @@ for s in open('3,4,5.csv'):
     unique_numbers = [x for x, count in dicts.items() if count == 1]
     repeat_numbers = [x for x, count in dicts.items() if count > 1 for _ in range(count)]
 
-    v1 = len(unique_numbers) > 0 and len(repeat_numbers) > 0
+    v1 = len(unique_numbers) == 4 and len(repeat_numbers) == 2
 
     if not v1:
         continue
@@ -22,6 +23,7 @@ for s in open('3,4,5.csv'):
     repeat_avg = sum(repeat_numbers) / len(repeat_numbers)
 
     v2 = unique_avg < repeat_avg
+
     if not v2:
         continue
 

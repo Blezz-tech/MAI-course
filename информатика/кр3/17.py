@@ -1,16 +1,16 @@
-f = open('17.txt').readlines()
-lst = [int(line) for line in f]
+lst = open('17.txt').read().split('\n')
+lst = list(map(int, lst))
 
-min_item = min(lst)
+max_chet = max(list(filter(lambda x: x % 2 == 0, lst)))
 
-lst_count = 0
-lst_sum = lst[0] + lst[1]
+count = 0
+max_sum = 0
+
 for i in range(len(lst) - 1):
     a, b = lst[i], lst[i+1]
 
-    v1 = a % 30 == min_item or b % 30 == min_item
-    if v1:
-        lst_count += 1
-        lst_sum = min(lst_sum, a+b)
+    if (a + b) == max_chet:
+        count += 1
+        max_sum = max(max_sum, a**2 + b**2)
 
-print(lst_count, lst_sum)
+print(count, max_sum)

@@ -1,9 +1,10 @@
-S = "1" * 2026
+s = '22' + ('1' * 2050) + '22'
 
-while "11111" in S or "222" in S:
-    if "11111" in S:
-        S = S.replace("11111", "22", 1)
+while "211" in s or "112" in s:
+    s = s.replace("11", "1", 1)
+    if "21" in s:
+        s = s.replace("21", '12', 1)
     else:
-        S = S.replace("222", "2", 1)
+        s = s.replace('12', 1)
 
-print(S)
+print(s)

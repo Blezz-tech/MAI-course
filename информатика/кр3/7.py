@@ -1,11 +1,15 @@
+from math import floor
 
-s = 256*2560
+S = 1024*100
 
-# 2 ** 8 = 256
-# 8 бит
-k = 8
+V = 75 * 1024 * 8
 
-V = 163840
-t = 250
+x = V * 1.35
 
-print((V * t) / (s * k))
+k = x / S
+
+print(k)
+
+k = floor(k)
+print(k, 2**k)
+

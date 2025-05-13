@@ -2,15 +2,19 @@ def f(n):
     s = bin(n)[2:]
 
     if n % 2 == 0:
-        s = s.replace("1", "11")
+        s += '0'
     else:
-        s = s.replace("0", "00")
+        s += '1'
 
+    if s.count('1') % 3 == 0:
+        s = "11" + s[2:]
+    else:
+        s = "10" + s[2:]
     return int(s, 2)
 
 
-for n in range(300, 0, -1):
-    r = f(n)
-    if (r < 70) and (n != r):
-        print(n)
+for N in range(1000, 1, -1):
+    R = f(N)
+    if R <= 37:
+        print(N)
         break

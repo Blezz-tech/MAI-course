@@ -1,16 +1,15 @@
-f = open('9.csv').readlines()
-lst = [[int(x) for x in line.split(',')] for line in f]
+lst = open('9.csv').read().split('\n')
+lst = [list(map(int, item.split(','))) for item in lst]
 
 count = 0
+
 for line in lst:
-    a, b, c, d = line[0], line[1], line[2], line[3]
 
-    line.sort()
+    line = sorted(line)
+    v0 = (sum(line[1:]) / 5) > line[0]
+    v1 = line[0] * line[3] == line[1] * line[2]
 
-    v1 = line[-1] > sum(line[:-1])
-    v2 = a != b and a != c and a != d and b != c and b != d and c != d
-    if v1 and v2:
+    if v0 and v1:
         count += 1
-
 
 print(count)

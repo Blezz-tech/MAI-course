@@ -1,4 +1,3 @@
-
 def convert(x):
     n = ""
     while x:
@@ -9,8 +8,6 @@ def convert(x):
 
 count = 0
 
-
-
 count = 0
 
 for a in "123456":
@@ -19,13 +16,13 @@ for a in "123456":
             for d in "0123456":
                 for e in "0123456":
                     for f in "0123456":
-                        s = a+b+c+d+e+f
-                        s1 = s.replace("2", "$")\
-                            .replace("4", "$")\
+                        s = a + b + c + d + e + f
+                        s1 = s.replace("2", "$") \
+                            .replace("4", "$") \
                             .replace("6", "$")
-                        if s.count("0") == 1\
-                            and "$0" not in s1\
-                            and "0$" not in s1:
+                        if s.count("0") == 1 \
+                                and "$0" not in s1 \
+                                and "0$" not in s1:
                             count += 1
                             # print(s1)
 

@@ -123,46 +123,73 @@ def task_9():
     print("9:", k)
 
 
+# def task_10():
+#     import re
+#     lines = open("24-9.txt").readlines()
+#
+#     count = 0
+#     for s in lines:
+#         if re.search(r"Y.Z", s):
+#             count += 1
+#
+#     print("10:", count)
+
+
 def task_10():
     import re
     lines = open("24-9.txt").readlines()
 
     count = 0
-    for s in lines:
-        if re.search(r"Y.Z", s):
-            count += 1
+    for line in lines:
+        for i in range(len(line) - 2):
+            if line[i] == 'F' and line[i+2] == 'O':
+                count += 1
+                break
 
     print("10:", count)
 
 
+# def task_13():
+#     s = open("24-13.txt").read()
+#     maxl = 0
+#
+#     for i in range(len(s) - 1):
+#         for j in range(i + 1, len(s)):
+#             q = s[i:j]
+#             q_len = j - i
+#             if q_len > maxl:
+#                 if q.count('DE') <= 240:
+#                     maxl = q_len
+#
+#     print("13:", maxl)
+
+
 def task_13():
-    s = open("24-13.txt").read()
-    maxl = 0
-
-    for i in range(len(s) - 1):
-        for j in range(i + 1, len(s)):
-            q = s[i:j]
-            q_len =  j- i
-            if q_len > maxl:
-                if q.count('DE') <= 240:
-                    maxl = q_len
-
-    print("13:", maxl)
+    f = open("24-13.txt").read()
+    s = f.replace('DE', 'D E')
+    s = s.split()
+    maxi = 0
+    for i in range(len(s)):
+        r = ''.join(s[i:i + 241])
+        maxi = max(maxi, len(r))
+    print("13:", maxi)
 
 
 def task_14():
-    s = open("24-9.txt").read()
+    # Не работает
+    s = open("2025_24.txt").read()
+    
 
-    count = 0
-    for i in range(len(s) - 1):
-        t = s[i:i + 2]
-        if t != '-*' and t != '*-' and\
-            t != '--' and t != '**' and\
-            t != '-0':
-            count += 1
-            break
+    for i in s:
+        if
 
-    print("14:", count)
+    s = s.split()
+    print(s)
+    maxl = 0
+    for i in s:
+        maxl = max(maxl, len(i))
+
+    print("14:", maxl)
 
 
 task_0()
